@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File: res/values/arrays.xml -->
+<resources>
+    <!-- Frequency options for spinner -->
+    <string-array name="frequency_array">
+        <item>@string/frequency_daily</item>
+        <item>@string/frequency_weekly</item>
+        <item>@string/frequency_monthly</item>
+        <item>@string/frequency_quarterly</item>
+        <item>@string/frequency_annually</item>
+    </string-array>
+    
+    <!-- Sort options for records -->
+    <string-array name="sort_options_array">
+        <item>Date (Newest First)</item>
+        <item>Date (Oldest First)</item>
+        <item>Amount (High to Low)</item>
+        <item>Amount (Low to High)</item>
+        <item>Category (A-Z)</item>
+    </string-array>
+    
+    <!-- Theme options -->
+    <string-array name="theme_options_array">
+        <item>@string/settings_theme_light</item>
+        <item>@string/settings_theme_dark</item>
+        <item>@string/settings_theme_system</item>
+    </string-array>
+    
+    <!-- Category array -->
+    <string-array name="category_array">
+        <item>@string/category_food</item>
+        <item>@string/category_transport</item>
+        <item>@string/category_shopping</item>
+        <item>@string/category_entertainment</item>
+        <item>@string/category_bills</item>
+        <item>@string/category_health</item>
+        <item>@string/category_education</item>
+        <item>@string/category_other</item>
+    </string-array>
+</resources>

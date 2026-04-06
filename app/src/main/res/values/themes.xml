@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File: res/values/themes.xml -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+    <!-- Light Theme (Default) -->
+    <style name="Theme.HappySappy" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/rainbow_yellow</item>
+        <item name="colorPrimaryVariant">@color/rainbow_orange</item>
+        <item name="colorOnPrimary">@color/text_primary_light</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/rainbow_orange</item>
+        <item name="colorSecondaryVariant">@color/rainbow_red</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/background_card_light</item>
+        <item name="colorOnSurface">@color/text_primary_light</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/rainbow_yellow</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@color/background_light</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o">true</item>
+        
+        <!-- Error color -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
+        <item name="android:textColorHint">@color/text_hint_light</item>
+        
+        <!-- Edit text style -->
+        <item name="editTextStyle">@style/EditText.HappySappy</item>
+        
+        <!-- Button style -->
+        <item name="materialButtonStyle">@style/Button.HappySappy.Primary</item>
+        
+        <!-- Card view style -->
+        <item name="materialCardViewStyle">@style/CardView.HappySappy</item>
+    </style>
+    
+    <!-- Dark Theme -->
+    <style name="Theme.HappySappy.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/rainbow_yellow</item>
+        <item name="colorPrimaryVariant">@color/rainbow_orange</item>
+        <item name="colorOnPrimary">@color/text_primary_dark</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/rainbow_orange</item>
+        <item name="colorSecondaryVariant">@color/rainbow_red</item>
+        <item name="colorOnSecondary">@color/text_primary_dark</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/background_card_dark</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/background_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@color/background_dark</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o">false</item>
+        
+        <!-- Error color -->
+        <item name="colorError">@color/rainbow_red_light</item>
+        <item name="colorOnError">@color/text_primary_dark</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/text_primary_dark</item>
+        <item name="android:textColorSecondary">@color/text_secondary_dark</item>
+        <item name="android:textColorHint">@color/text_hint_dark</item>
+        
+        <!-- Edit text style -->
+        <item name="editTextStyle">@style/EditText.HappySappy.Dark</item>
+        
+        <!-- Button style -->
+        <item name="materialButtonStyle">@style/Button.HappySappy.Primary</item>
+        
+        <!-- Card view style -->
+        <item name="materialCardViewStyle">@style/CardView.HappySappy.Dark</item>
+    </style>
+    
+    <!-- Edit Text Style -->
+    <style name="EditText.HappySappy" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/rainbow_yellow</item>
+        <item name="boxBackgroundColor">@color/background_light</item>
+        <item name="hintTextColor">@color/text_secondary_light</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+    </style>
+    
+    <style name="EditText.HappySappy.Dark" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/rainbow_yellow</item>
+        <item name="boxBackgroundColor">@color/background_card_dark</item>
+        <item name="hintTextColor">@color/text_secondary_dark</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+    </style>
+    
+    <!-- Primary Button Style with Rainbow Gradient -->
+    <style name="Button.HappySappy.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/rainbow_yellow</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+    <!-- Secondary Button Style -->
+    <style name="Button.HappySappy.Secondary" parent="Widget.Material3.Button.TonalButton">
+        <item name="backgroundTint">@color/background_surface_light</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeColor">@color/rainbow_yellow</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    
+    <!-- Card View Style -->
+    <style name="CardView.HappySappy" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/background_card_light</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="strokeColor">@color/divider_light</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+    
+    <style name="CardView.HappySappy.Dark" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/background_card_dark</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="strokeColor">@color/divider_dark</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+    
+    <!-- Rainbow Progress Bar Style -->
+    <style name="ProgressBar.HappySappy.Rainbow" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_bar_rainbow</item>
+        <item name="android:minHeight">8dp</item>
+        <item name="android:maxHeight">8dp</item>
+        <item name="android:indeterminate">false</item>
+    </style>
+    
+    <!-- Navigation View Style -->
+    <style name="Navigation.HappySappy" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/navigation_color_selector</item>
+        <item name="itemTextColor">@color/navigation_color_selector</item>
+        <item name="itemRippleColor">@color/ripple_light</item>
+        <item name="backgroundTint">@color/navigation_background_light</item>
+        <item name="itemActiveIndicatorStyle">@style/Navigation.Indicator</item>
+    </style>
+    
+    <style name="Navigation.Indicator" parent="">
+        <item name="android:color">@color/rainbow_yellow_light</item>
+    </style>
+    
+    <!-- Dialog Theme -->
+    <style name="Dialog.HappySappy" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/rainbow_yellow</item>
+        <item name="colorPrimaryContainer">@color/rainbow_yellow_light</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary_light</item>
+        <item name="android:background">@color/background_card_light</item>
+    </style>
+    
+    <style name="Dialog.HappySappy.Dark" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/rainbow_yellow</item>
+        <item name="colorPrimaryContainer">@color/rainbow_orange</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary_dark</item>
+        <item name="android:background">@color/background_card_dark</item>
+    </style>
+    
+    <!-- Toolbar Style -->
+    <style name="Toolbar.HappySappy" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/rainbow_yellow</item>
+        <item name="titleTextColor">@color/text_primary_light</item>
+        <item name="subtitleTextColor">@color/text_secondary_light</item>
+        <item name="navigationIconTint">@color/text_primary_light</item>
+    </style>
+    
+    <!-- Chip Style -->
+    <style name="Chip.HappySappy" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/background_surface_light</item>
+        <item name="checkedIconTint">@color/rainbow_yellow</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="chipStrokeColor">@color/divider_light</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="checkedIconVisible">true</item>
+    </style>
+    
+    <!-- Category Chip Colors -->
+    <style name="Chip.HappySappy.Food">
+        <item name="chipBackgroundColor">@color/category_food</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="Chip.HappySappy.Transport">
+        <item name="chipBackgroundColor">@color/category_transport</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="Chip.HappySappy.Shopping">
+        <item name="chipBackgroundColor">@color/category_shopping</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="Chip.HappySappy.Entertainment">
+        <item name="chipBackgroundColor">@color/category_entertainment</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="Chip.HappySappy.Bills">
+        <item name="chipBackgroundColor">@color/category_bills</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="Chip.HappySappy.Health">
+        <item name="chipBackgroundColor">@color/category_health</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <!-- Splash Screen Theme -->
+    <style name="Theme.HappySappy.Splash" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splash_gradient</item>
+        <item name="android:statusBarColor">@color/rainbow_yellow</item>
+        <item name="android:navigationBarColor">@color/rainbow_yellow</item>
+    </style>
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File: res/values/strings.xml -->
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Happy Sappy</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_records">Records</string>
+    <string name="nav_add">Add Expense</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Dashboard Screen -->
+    <string name="dashboard_title">Expense Dashboard</string>
+    <string name="dashboard_total_spent">Total Spent</string>
+    <string name="dashboard_expense_count">Expenses</string>
+    <string name="dashboard_average">Average</string>
+    <string name="dashboard_recent_expenses">Recent Expenses</string>
+    <string name="dashboard_view_all">View All</string>
+    <string name="dashboard_no_expenses">No expenses yet</string>
+    <string name="dashboard_add_first">Add your first expense to get started!</string>
+    <string name="dashboard_category_breakdown">Category Breakdown</string>
+    
+    <!-- Add Expense Screen -->
+    <string name="add_expense_title">Add New Expense</string>
+    <string name="add_expense_amount">Amount</string>
+    <string name="add_expense_amount_hint">Enter amount</string>
+    <string name="add_expense_category">Category</string>
+    <string name="add_expense_category_hint">Select category</string>
+    <string name="add_expense_frequency">Frequency</string>
+    <string name="add_expense_frequency_hint">Select frequency</string>
+    <string name="add_expense_note">Note (optional)</string>
+    <string name="add_expense_note_hint">Add a note</string>
+    <string name="add_expense_date">Date</string>
+    <string name="add_expense_button">Add Expense</string>
+    <string name="add_expense_success">Expense added successfully!</string>
+    <string name="add_expense_error">Failed to add expense</string>
+    
+    <!-- Records Screen -->
+    <string name="records_title">Expense Records</string>
+    <string name="records_search_hint">Search expenses…</string>
+    <string name="records_filter">Filter</string>
+    <string name="records_sort">Sort</string>
+    <string name="records_no_results">No expenses found</string>
+    <string name="records_delete_confirm">Delete this expense?</string>
+    <string name="records_delete">Delete</string>
+    <string name="records_cancel">Cancel</string>
+    <string name="records_edit">Edit</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_currency">Currency</string>
+    <string name="settings_currency_select">Select Currency</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_light">Light Mode</string>
+    <string name="settings_theme_dark">Dark Mode</string>
+    <string name="settings_theme_system">Follow System</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_enable">Enable Notifications</string>
+    <string name="settings_notifications_daily">Daily Reminder</string>
+    <string name="settings_notifications_weekly">Weekly Summary</string>
+    <string name="settings_notifications_monthly">Monthly Report</string>
+    <string name="settings_data">Data Management</string>
+    <string name="settings_export">Export Data</string>
+    <string name="settings_clear">Clear All Data</string>
+    <string name="settings_clear_confirm">Are you sure you want to delete all expenses? This cannot be undone.</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_privacy">Privacy Policy</string>
+    
+    <!-- Categories -->
+    <string name="category_food">Food</string>
+    <string name="category_transport">Transport</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_bills">Bills</string>
+    <string name="category_health">Health</string>
+    <string name="category_education">Education</string>
+    <string name="category_other">Other</string>
+    
+    <!-- Frequencies -->
+    <string name="frequency_daily">Daily</string>
+    <string name="frequency_weekly">Weekly</string>
+    <string name="frequency_monthly">Monthly</string>
+    <string name="frequency_quarterly">Quarterly</string>
+    <string name="frequency_annually">Annually</string>
+    
+    <!-- Gamification -->
+    <string name="gamification_title">Achievements</string>
+    <string name="gamification_streak">No Spend Streak</string>
+    <string name="gamification_streak_days">%d days</string>
+    <string name="gamification_discipline">Discipline Score</string>
+    <string name="gamification_level">Level %d</string>
+    <string name="gamification_xp">%d XP</string>
+    <string name="gamification_achievement_unlocked">Achievement Unlocked!</string>
+    
+    <!-- Achievements -->
+    <string name="achievement_first_expense">First Step</string>
+    <string name="achievement_first_expense_desc">Log your first expense</string>
+    <string name="achievement_week_streak">Week Warrior</string>
+    <string name="achievement_week_streak_desc">7-day logging streak</string>
+    <string name="achievement_budget_master">Budget Master</string>
+    <string name="achievement_budget_master_desc">Stay under budget for a week</string>
+    <string name="achievement_frequency_king">Frequency King</string>
+    <string name="achievement_frequency_king_desc">Use all frequency types</string>
+    <string name="achievement_category_explorer">Category Explorer</string>
+    <string name="achievement_category_explorer_desc">Use all categories</string>
+    <string name="achievement_monthly_master">Monthly Master</string>
+    <string name="achievement_monthly_master_desc">Complete month of tracking</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_name">Expense Reminders</string>
+    <string name="notification_channel_desc">Reminders for expense tracking</string>
+    <string name="notification_daily_title">Daily Reminder</string>
+    <string name="notification_daily_text">Don\'t forget to log your expenses today!</string>
+    <string name="notification_weekly_title">Weekly Summary</string>
+    <string name="notification_weekly_text">Check your weekly spending summary</string>
+    <string name="notification_monthly_title">Monthly Report</string>
+    <string name="notification_monthly_text">Your monthly expense report is ready</string>
+    <string name="notification_achievement_title">Achievement Unlocked!</string>
+    <string name="notification_streak_title">Keep Your Streak!</string>
+    <string name="notification_streak_text">You\'re on a %d day streak. Keep it up!</string>
+    
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="close">Close</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="loading">Loading…</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="retry">Retry</string>
+    
+    <!-- Validation Messages -->
+    <string name="error_amount_required">Amount is required</string>
+    <string name="error_amount_invalid">Please enter a valid amount</string>
+    <string name="error_category_required">Category is required</string>
+    <string name="error_frequency_required">Frequency is required</string>
+    
+    <!-- Format Strings -->
+    <string name="format_currency">$%.2f</string>
+    <string name="format_date">MMM dd, yyyy</string>
+    <string name="format_time">hh:mm a</string>
+    <string name="format_datetime">MMM dd, yyyy hh:mm a</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_expense_icon">Expense icon</string>
+    <string name="cd_delete_button">Delete expense</string>
+    <string name="cd_edit_button">Edit expense</string>
+    <string name="cd_add_button">Add new expense</string>
+    <string name="cd_settings_button">Open settings</string>
+    <string name="cd_search_button">Search expenses</string>
+    <string name="cd_filter_button">Filter expenses</string>
+    <string name="cd_category_icon">Category icon</string>
+    <string name="cd_rainbow_progress">Progress indicator</string>
+</resources>

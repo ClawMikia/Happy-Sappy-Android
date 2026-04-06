@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Sappy - User Manual</title>
+    <style>
+        :root {
+            --rainbow-red: #FF4444;
+            --rainbow-orange: #FF6B35;
+            --rainbow-yellow: #FF9D00;
+            --rainbow-green: #4CAF50;
+            --rainbow-blue: #2196F3;
+            --rainbow-purple: #9C27B0;
+            --background: #FAFAFA;
+            --card-bg: #FFFFFF;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header with Rainbow Gradient */
+        .header {
+            background: linear-gradient(135deg, 
+                var(--rainbow-red) 0%, 
+                var(--rainbow-orange) 20%, 
+                var(--rainbow-yellow) 40%, 
+                var(--rainbow-green) 60%, 
+                var(--rainbow-blue) 80%, 
+                var(--rainbow-purple) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.25);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        /* Navigation */
+        .nav-container {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .nav a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav a:hover {
+            color: var(--rainbow-yellow);
+            border-bottom-color: var(--rainbow-yellow);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Styling */
+        .section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid;
+            display: inline-block;
+        }
+
+        .section h2.dashboard { border-color: var(--rainbow-red); color: var(--rainbow-red); }
+        .section h2.add-expense { border-color: var(--rainbow-orange); color: var(--rainbow-orange); }
+        .section h2.records { border-color: var(--rainbow-green); color: var(--rainbow-green); }
+        .section h2.settings { border-color: var(--rainbow-blue); color: var(--rainbow-blue); }
+        .section h2.gamification { border-color: var(--rainbow-purple); color: var(--rainbow-purple); }
+        .section h2.notifications { border-color: var(--rainbow-yellow); color: var(--rainbow-yellow); }
+
+        .section h3 {
+            font-size: 1.3em;
+            margin: 25px 0 15px;
+            color: var(--text-primary);
+        }
+
+        .section h4 {
+            font-size: 1.1em;
+            margin: 20px 0 10px;
+            color: var(--text-secondary);
+        }
+
+        /* Screenshot Placeholder */
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screenshot-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--rainbow-red), 
+                var(--rainbow-orange), 
+                var(--rainbow-yellow), 
+                var(--rainbow-green), 
+                var(--rainbow-blue), 
+                var(--rainbow-purple));
+        }
+
+        .screenshot-placeholder .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .screenshot-placeholder p {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: -15px;
+            margin-bottom: 20px;
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--rainbow-yellow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h4 {
+            margin-top: 0;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            margin-bottom: 0;
+            font-size: 0.95em;
+            color: var(--text-secondary);
+        }
+
+        /* Step-by-step instructions */
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+            margin: 20px 0;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
+            padding: 15px 15px 15px 60px;
+            margin-bottom: 10px;
+            background: var(--background);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--rainbow-yellow), var(--rainbow-orange));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .steps li strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+
+        /* Tips and Notes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--rainbow-yellow);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .tip-box strong {
+            color: var(--rainbow-orange);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--rainbow-red);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .warning-box strong {
+            color: var(--rainbow-red);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Category Colors */
+        .category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            margin: 3px;
+        }
+
+        .cat-food { background: #FFCDD2; color: #C62828; }
+        .cat-transport { background: #BBDEFB; color: #1565C0; }
+        .cat-shopping { background: #F8BBD0; color: #AD1457; }
+        .cat-entertainment { background: #E1BEE7; color: #6A1B9A; }
+        .cat-bills { background: #C5CAE9; color: #283593; }
+        .cat-health { background: #C8E6C9; color: #2E7D32; }
+        .cat-education { background: #FFF9C4; color: #F57F17; }
+        .cat-other { background: #ECEFF1; color: #37474F; }
+
+        /* Achievement badges */
+        .achievement {
+            display: inline-flex;
+            align-items: center;
+            background: var(--background);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 5px;
+            border: 1px solid var(--border);
+            min-width: 200px;
+        }
+
+        .achievement .badge-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .achievement .badge-info strong {
+            display: block;
+            font-size: 0.95em;
+        }
+
+        .achievement .badge-info span {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--background);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        tr:hover {
+            background: var(--background);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+
+        .footer .rainbow-line {
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--rainbow-red), 
+                var(--rainbow-orange), 
+                var(--rainbow-yellow), 
+                var(--rainbow-green), 
+                var(--rainbow-blue), 
+                var(--rainbow-purple));
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .quick-link {
+            background: var(--background);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+        }
+
+        .quick-link:hover {
+            background: var(--rainbow-yellow);
+            color: white;
+            border-color: var(--rainbow-yellow);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .nav a {
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--rainbow-yellow), var(--rainbow-orange));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            font-size: 1.5em;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>🌈 Happy Sappy</h1>
+        <p>Your Personal Expense Tracking Companion</p>
+        <span class="version-badge">Version 1.0.0</span>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav">
+            <a href="#introduction">Introduction</a>
+            <a href="#getting-started">Getting Started</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#add-expense">Add Expense</a>
+            <a href="#records">Records</a>
+            <a href="#settings">Settings</a>
+            <a href="#gamification">Gamification</a>
+            <a href="#notifications">Notifications</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="section">
+            <h2 class="dashboard">Introduction</h2>
+            
+            <p>Welcome to <strong>Happy Sappy</strong>, your personal expense tracking companion! This app helps you monitor your spending habits, set financial goals, and develop better money management skills through an engaging, gamified experience.</p>
+
+            <h3>Key Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📊 Expense Tracking</h4>
+                    <p>Log and categorize your daily expenses with ease</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🏆 Gamification</h4>
+                    <p>Earn XP, level up, and unlock achievements</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📈 Insights</h4>
+                    <p>View spending patterns and statistics</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔔 Reminders</h4>
+                    <p>Never forget to log your expenses</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎨 Rainbow Theme</h4>
+                    <p>Beautiful, colorful interface</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌙 Dark Mode</h4>
+                    <p>Easy on the eyes at night</p>
+                </div>
+            </div>
+
+            <h3>Supported Categories</h3>
+            <p>Organize your expenses into these categories:</p>
+            <div style="margin: 15px 0;">
+                <span class="category-tag cat-food">🍔 Food</span>
+                <span class="category-tag cat-transport">🚗 Transport</span>
+                <span class="category-tag cat-shopping">🛍️ Shopping</span>
+                <span class="category-tag cat-entertainment">🎬 Entertainment</span>
+                <span class="category-tag cat-bills">📄 Bills</span>
+                <span class="category-tag cat-health">🏥 Health</span>
+                <span class="category-tag cat-education">📚 Education</span>
+                <span class="category-tag cat-other">📝 Other</span>
+            </div>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">📱</span>
+                <p><strong>Screenshot: App Home Screen</strong></p>
+                <p>Showcasing the rainbow-themed welcome card and main navigation</p>
+            </div>
+            <p class="screenshot-caption">Figure 1: Happy Sappy welcome screen with rainbow gradient header</p>
+        </section>
+
+        <!-- Getting Started Section -->
+        <section id="getting-started" class="section">
+            <h2 class="dashboard">Getting Started</h2>
+
+            <h3>First Time Setup</h3>
+            <p>When you first open Happy Sappy, you'll be greeted with the Dashboard. Here's how to get started:</p>
+
+            <ol class="steps">
+                <li>
+                    <strong>Open the App</strong>
+                    Tap the Happy Sappy icon on your home screen to launch the application.
+                </li>
+                <li>
+                    <strong>Explore the Dashboard</strong>
+                    The main screen shows your total spending, expense count, and average expense amount.
+                </li>
+                <li>
+                    <strong>Add Your First Expense</strong>
+                    Tap the "Add Expense" button in the bottom navigation or the floating action button.
+                </li>
+                <li>
+                    <strong>Configure Settings</strong>
+                    Visit Settings to customize your currency, theme, and notification preferences.
+                </li>
+            </ol>
+
+            <div class="tip-box">
+                <strong>💡 Pro Tip</strong>
+                Enable notifications in Settings to receive daily reminders to log your expenses and maintain your streaks!
+            </div>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">🚀</span>
+                <p><strong>Screenshot: Empty State</strong></p>
+                <p>The dashboard showing "No expenses yet - Add your first expense to get started!"</p>
+            </div>
+            <p class="screenshot-caption">Figure 2: Initial empty state with call-to-action</p>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <h2 class="dashboard">Dashboard</h2>
+
+            <p>The Dashboard is your financial command center. It provides an at-a-glance view of your spending habits and gamification progress.</p>
+
+            <h3>Dashboard Components</h3>
+
+            <h4>📊 Statistics Cards</h4>
+            <table>
+                <tr>
+                    <th>Card</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><strong>Total Spent</strong></td>
+                    <td>The sum of all your logged expenses</td>
+                </tr>
+                <tr>
+                    <td><strong>Expenses</strong></td>
+                    <td>Total number of expenses recorded</td>
+                </tr>
+                <tr>
+                    <td><strong>Average</strong></td>
+                    <td>Average amount per expense</td>
+                </tr>
+            </table>
+
+            <h4>🎮 Gamification Section</h4>
+            <p>Track your progress with:</p>
+            <ul>
+                <li><strong>No Spend Streak:</strong> Days without unnecessary spending</li>
+                <li><strong>Level:</strong> Your current gamification level</li>
+                <li><strong>XP:</strong> Experience points earned</li>
+            </ul>
+
+            <h4>📋 Recent Expenses</h4>
+            <p>View your most recently added expenses. Tap "View All" to see the complete list in the Records section.</p>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">📊</span>
+                <p><strong>Screenshot: Dashboard with Data</strong></p>
+                <p>Showing statistics cards, gamification progress, and recent expenses list</p>
+            </div>
+            <p class="screenshot-caption">Figure 3: Dashboard displaying expense statistics and gamification progress</p>
+
+            <div class="tip-box">
+                <strong>💡 Pro Tip</strong>
+                Tap on any expense in the Recent Expenses list to view its details or edit it.
+            </div>
+        </section>
+
+        <!-- Add Expense Section -->
+        <section id="add-expense" class="section">
+            <h2 class="add-expense">Add Expense</h2>
+
+            <p>Recording your expenses is the core feature of Happy Sappy. Here's how to add a new expense:</p>
+
+            <h3>Step-by-Step Guide</h3>
+
+            <ol class="steps">
+                <li>
+                    <strong>Navigate to Add Expense</strong>
+                    Tap the "Add Expense" button in the bottom navigation bar.
+                </li>
+                <li>
+                    <strong>Enter Amount</strong>
+                    Type the expense amount in the Amount field. Only positive numbers are accepted.
+                </li>
+                <li>
+                    <strong>Select Category</strong>
+                    Choose from 8 categories: Food, Transport, Shopping, Entertainment, Bills, Health, Education, or Other. Tap the appropriate chip to select.
+                </li>
+                <li>
+                    <strong>Set Frequency</strong>
+                    Select how often this expense occurs: Daily, Weekly, Monthly, Quarterly, or Annually.
+                </li>
+                <li>
+                    <strong>Choose Date</strong>
+                    Tap the date field to open the date picker and select when the expense occurred.
+                </li>
+                <li>
+                    <strong>Add Note (Optional)</strong>
+                    Include additional details about the expense in the note field.
+                </li>
+                <li>
+                    <strong>Save</strong>
+                    Tap the "Add Expense" button to save your entry.
+                </li>
+            </ol>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">➕</span>
+                <p><strong>Screenshot: Add Expense Form</strong></p>
+                <p>The complete form with all input fields visible</p>
+            </div>
+            <p class="screenshot-caption">Figure 4: Add Expense screen with category chips and input fields</p>
+
+            <h3>Expense Categories Explained</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🍔 Food</h4>
+                    <p>Restaurants, groceries, coffee shops, delivery services</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🚗 Transport</h4>
+                    <p>Gas, public transit, rideshare, parking, maintenance</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Clothing, electronics, home goods, personal items</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎬 Entertainment</h4>
+                    <p>Movies, concerts, subscriptions, hobbies, games</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📄 Bills</h4>
+                    <p>Utilities, rent, insurance, loan payments</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🏥 Health</h4>
+                    <p>Medical, pharmacy, fitness, wellness</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Important</strong>
+                Make sure to select the correct category as it affects your spending analysis and achievement tracking!
+            </div>
+        </section>
+
+        <!-- Records Section -->
+        <section id="records" class="section">
+            <h2 class="records">Records</h2>
+
+            <p>The Records section is where you can view, search, filter, and manage all your logged expenses.</p>
+
+            <h3>Features</h3>
+
+            <h4>🔍 Search</h4>
+            <p>Use the search bar at the top to find expenses by:</p>
+            <ul>
+                <li>Category name (e.g., "Food", "Transport")</li>
+                <li>Note content</li>
+                <li>Amount</li>
+            </ul>
+
+            <h4>🎚️ Filter</h4>
+            <p>Tap the Filter button to narrow down expenses by:</p>
+            <ul>
+                <li><strong>Category:</strong> Show only specific categories</li>
+                <li><strong>Date Range:</strong> Filter by time period</li>
+                <li><strong>Frequency:</strong> Filter by expense frequency</li>
+            </ul>
+
+            <h4>📊 Sort</h4>
+            <p>Tap the Sort button to order expenses by:</p>
+            <ul>
+                <li><strong>Date:</strong> Newest or oldest first</li>
+                <li><strong>Amount:</strong> Highest or lowest first</li>
+                <li><strong>Category:</strong> Alphabetically by category</li>
+            </ul>
+
+            <h4>✏️ Edit & Delete</h4>
+            <p>For any expense in the list:</p>
+            <ul>
+                <li><strong>Edit:</strong> Tap on an expense to modify its details</li>
+                <li><strong>Delete:</strong> Swipe or long-press to remove an expense (confirm deletion)</li>
+            </ul>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">📋</span>
+                <p><strong>Screenshot: Records List</strong></p>
+                <p>Expense list with search bar, filter and sort buttons</p>
+            </div>
+            <p class="screenshot-caption">Figure 5: Records screen showing expense list with filtering options</p>
+
+            <div class="tip-box">
+                <strong>💡 Pro Tip</strong>
+                Active filters are displayed as chips below the search bar. Tap any chip to remove that filter quickly!
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="section">
+            <h2 class="settings">Settings</h2>
+
+            <p>Customize Happy Sappy to fit your preferences in the Settings screen.</p>
+
+            <h3>Settings Options</h3>
+
+            <h4>💱 Currency</h4>
+            <p>Select your preferred currency for displaying amounts. The app supports multiple currencies including USD, EUR, GBP, JPY, and more.</p>
+
+            <h4>🎨 Theme</h4>
+            <p>Choose your visual preference:</p>
+            <ul>
+                <li><strong>Light Mode:</strong> Bright, clean interface (default)</li>
+                <li><strong>Dark Mode:</strong> Easy on the eyes, saves battery on OLED screens</li>
+                <li><strong>Follow System:</strong> Automatically matches your device's theme setting</li>
+            </ul>
+
+            <h4>🔔 Notifications</h4>
+            <p>Control your notification preferences:</p>
+            <ul>
+                <li><strong>Enable Notifications:</strong> Master toggle for all notifications</li>
+                <li><strong>Daily Reminder:</strong> Get reminded to log expenses each day</li>
+                <li><strong>Weekly Summary:</strong> Receive a summary of your weekly spending</li>
+                <li><strong>Monthly Report:</strong> Get a comprehensive monthly expense report</li>
+            </ul>
+
+            <h4>💾 Data Management</h4>
+            <ul>
+                <li><strong>Export Data:</strong> Export all your expenses to a file (CSV format)</li>
+                <li><strong>Clear All Data:</strong> Delete all expenses and reset the app (irreversible!)</li>
+            </ul>
+
+            <h4>ℹ️ About</h4>
+            <p>View app version information and access the privacy policy.</p>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">⚙️</span>
+                <p><strong>Screenshot: Settings Screen</strong></p>
+                <p>All settings options including currency, theme, and notifications</p>
+            </div>
+            <p class="screenshot-caption">Figure 6: Settings screen with all customization options</p>
+
+            <div class="warning-box">
+                <strong>⚠️ Warning</strong>
+                Clearing all data will permanently delete all your expenses and cannot be undone. Make sure to export your data first if you want to keep a backup!
+            </div>
+        </section>
+
+        <!-- Gamification Section -->
+        <section id="gamification" class="section">
+            <h2 class="gamification">Gamification</h2>
+
+            <p>Happy Sappy makes expense tracking fun with a gamification system that rewards consistent tracking and financial discipline!</p>
+
+            <h3>XP & Levels</h3>
+            <p>Earn experience points (XP) for various actions and level up to unlock new achievements.</p>
+
+            <table>
+                <tr>
+                    <th>Action</th>
+                    <th>XP Earned</th>
+                </tr>
+                <tr>
+                    <td>Log an expense</td>
+                    <td>+10 XP</td>
+                </tr>
+                <tr>
+                    <td>Daily logging streak bonus</td>
+                    <td>+5 XP per day</td>
+                </tr>
+                <tr>
+                    <td>Weekly consistency bonus</td>
+                    <td>+50 XP</td>
+                </tr>
+                <tr>
+                    <td>Monthly discipline bonus</td>
+                    <td>+200 XP</td>
+                </tr>
+            </table>
+
+            <h3>Level Progression</h3>
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>XP Range</th>
+                    <th>Title</th>
+                </tr>
+                <tr>
+                    <td>Level 1</td>
+                    <td>0 - 100 XP</td>
+                    <td>Beginner</td>
+                </tr>
+                <tr>
+                    <td>Level 2</td>
+                    <td>101 - 300 XP</td>
+                    <td>Tracker</td>
+                </tr>
+                <tr>
+                    <td>Level 3</td>
+                    <td>301 - 600 XP</td>
+                    <td>Saver</td>
+                </tr>
+                <tr>
+                    <td>Level 4</td>
+                    <td>601 - 1000 XP</td>
+                    <td>Master</td>
+                </tr>
+                <tr>
+                    <td>Level 5</td>
+                    <td>1001+ XP</td>
+                    <td>Legend</td>
+                </tr>
+            </table>
+
+            <h3>Achievements</h3>
+            <p>Unlock special achievements for reaching milestones:</p>
+
+            <div style="margin: 20px 0;">
+                <div class="achievement">
+                    <span class="badge-icon">👣</span>
+                    <div class="badge-info">
+                        <strong>First Step</strong>
+                        <span>Log your first expense</span>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <span class="badge-icon">⚔️</span>
+                    <div class="badge-info">
+                        <strong>Week Warrior</strong>
+                        <span>7-day logging streak</span>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <span class="badge-icon">💰</span>
+                    <div class="badge-info">
+                        <strong>Budget Master</strong>
+                        <span>Stay under budget for a week</span>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <span class="badge-icon">👑</span>
+                    <div class="badge-info">
+                        <strong>Frequency King</strong>
+                        <span>Use all frequency types</span>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <span class="badge-icon">🗺️</span>
+                    <div class="badge-info">
+                        <strong>Category Explorer</strong>
+                        <span>Use all categories</span>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <span class="badge-icon">📅</span>
+                    <div class="badge-info">
+                        <strong>Monthly Master</strong>
+                        <span>Complete month of tracking</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Streaks</h3>
+            <p>Build and maintain streaks to maximize your rewards:</p>
+            <ul>
+                <li><strong>No Spend Streak:</strong> Consecutive days without unnecessary spending</li>
+                <li><strong>Logging Streak:</strong> Consecutive days of logging at least one expense</li>
+            </ul>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">🏆</span>
+                <p><strong>Screenshot: Gamification Dashboard</strong></p>
+                <p>Showing level progress, XP bar, and unlocked achievements</p>
+            </div>
+            <p class="screenshot-caption">Figure 7: Gamification section showing achievements and progress</p>
+        </section>
+
+        <!-- Notifications Section -->
+        <section id="notifications" class="section">
+            <h2 class="notifications">Notifications</h2>
+
+            <p>Stay on top of your expense tracking with smart notifications.</p>
+
+            <h3>Notification Types</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📝 Daily Reminder</h4>
+                    <p>"Don't forget to log your expenses today!" - Helps you maintain your logging streak</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 Weekly Summary</h4>
+                    <p>"Check your weekly spending summary" - Review your spending patterns</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📈 Monthly Report</h4>
+                    <p>"Your monthly expense report is ready" - Comprehensive monthly overview</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔥 Streak Alert</h4>
+                    <p>"You're on a X day streak. Keep it up!" - Motivational streak updates</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🏆 Achievement Unlocked</h4>
+                    <p>"Achievement Unlocked!" - Celebrate your milestones</p>
+                </div>
+            </div>
+
+            <h3>Managing Notifications</h3>
+            <ol class="steps">
+                <li>
+                    <strong>Open Settings</strong>
+                    Navigate to the Settings screen from the bottom navigation.
+                </li>
+                <li>
+                    <strong>Toggle Notifications</strong>
+                    Use the "Enable Notifications" switch to turn all notifications on or off.
+                </li>
+                <li>
+                    <strong>Customize</strong>
+                    Enable or disable individual notification types (Daily, Weekly, Monthly) based on your preferences.
+                </li>
+            </ol>
+
+            <!-- Screenshot Placeholder -->
+            <div class="screenshot-placeholder">
+                <span class="icon">🔔</span>
+                <p><strong>Screenshot: Notification Settings</strong></p>
+                <p>Notification toggle switches in the Settings screen</p>
+            </div>
+            <p class="screenshot-caption">Figure 8: Notification preferences in Settings</p>
+
+            <div class="tip-box">
+                <strong>💡 Pro Tip</strong>
+                Enable all notification types for the best experience! Daily reminders help build the habit, while weekly and monthly reports give you valuable insights into your spending patterns.
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <h2 class="dashboard">Frequently Asked Questions</h2>
+
+            <h3>General Questions</h3>
+
+            <h4>Is my data stored locally or in the cloud?</h4>
+            <p>Your expense data is stored locally on your device using Room database. This ensures your financial information remains private and secure.</p>
+
+            <h4>Can I export my data?</h4>
+            <p>Yes! Go to Settings > Data Management > Export Data to export all your expenses as a CSV file that can be opened in spreadsheet applications.</p>
+
+            <h4>What happens if I uninstall the app?</h4>
+            <p>Unfortunately, uninstalling the app will delete all your local data. Make sure to export your data before uninstalling if you want to keep a backup.</p>
+
+            <h4>Does the app work offline?</h4>
+            <p>Yes! Happy Sappy works completely offline. No internet connection is required for any of its features.</p>
+
+            <h3>Features Questions</h3>
+
+            <h4>How do I edit an expense?</h4>
+            <p>Go to the Records section, find the expense you want to edit, and tap on it. You'll be able to modify all fields and save your changes.</p>
+
+            <h4>Can I delete a single expense?</h4>
+            <p>Yes, in the Records section, you can delete individual expenses. Be careful as this action cannot be undone.</p>
+
+            <h4>How do achievements work?</h4>
+            <p>Achievements are automatically unlocked when you meet specific criteria (like logging your first expense, maintaining streaks, or using all categories). You'll receive a notification when you unlock a new achievement!</p>
+
+            <h4>What's the difference between frequency types?</h4>
+            <p>Frequency helps you categorize expenses by how often they occur:
+            <ul>
+                <li><strong>Daily:</strong> Expenses that happen every day (e.g., coffee)</li>
+                <li><strong>Weekly:</strong> Expenses that happen once a week (e.g., groceries)</li>
+                <li><strong>Monthly:</strong> Expenses that happen once a month (e.g., rent)</li>
+                <li><strong>Quarterly:</strong> Expenses that happen every 3 months</li>
+                <li><strong>Annually:</strong> Expenses that happen once a year (e.g., insurance)</li>
+            </ul>
+            </p>
+
+            <h3>Troubleshooting</h3>
+
+            <h4>Why aren't I receiving notifications?</h4>
+            <p>Check that:
+            <ol>
+                <li>Notifications are enabled in Settings > Notifications</li>
+                <li>Your device's notification settings allow notifications from Happy Sappy</li>
+                <li>You haven't enabled "Do Not Disturb" mode</li>
+            </ol>
+            </p>
+
+            <h4>The app is running slowly</h4>
+            <p>Try these steps:
+            <ol>
+                <li>Close and reopen the app</li>
+                <li>Check if you have a large number of expenses (consider exporting and clearing old data)</li>
+                <li>Restart your device</li>
+            </ol>
+            </p>
+
+            <h4>I accidentally deleted my data</h4>
+            <p>If you previously exported your data, you can import it back. Unfortunately, there's no undo function for the "Clear All Data" action, so always export before clearing.</p>
+
+            <div class="tip-box">
+                <strong>💡 Still have questions?</strong>
+                Check for app updates regularly as new features and improvements are added based on user feedback!
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="rainbow-line"></div>
+        <p><strong>Happy Sappy</strong> - Your Personal Expense Tracking Companion</p>
+        <p>Version 1.0.0 | Made with 🌈</p>
+        <p style="margin-top: 10px; font-size: 0.8em;">© 2024 Happy Sappy. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#introduction" class="scroll-top" title="Back to top">↑</a>
+
+</body>
+</html>

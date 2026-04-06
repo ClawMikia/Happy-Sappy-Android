@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File: res/xml/backup_rules.xml -->
+<full-backup-content>
+    <!-- Include all shared preferences and database files -->
+    <include domain="sharedpref" path="."/>
+    <include domain="database" path="."/>
+    
+    <!-- Exclude sensitive files from backup if needed -->
+    <!-- <exclude domain="sharedpref" path="sensitive_data.xml"/> -->
+</full-backup-content>
