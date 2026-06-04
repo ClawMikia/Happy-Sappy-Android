@@ -1,9 +1,16 @@
 // File: ui/activity/BaseActivity.kt
 package com.happysappy.app.ui.activity
 
+import android.content.res.ColorStateList
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.MenuItemCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.happysappy.app.R
 import com.happysappy.app.util.PreferenceManager
 
 /**
@@ -54,5 +61,40 @@ abstract class BaseActivity : AppCompatActivity() {
      */
     protected fun getPreferenceManager(): PreferenceManager {
         return preferenceManager
+    }
+
+    /**
+     * Applies individual colors to bottom navigation items.
+     */
+    protected fun setupRainbowNavigation(navView: BottomNavigationView) {
+        navView.itemIconTintList = null
+        navView.itemTextColor = null
+        
+        val menu = navView.menu
+        colorMenuItem(menu.findItem(R.id.navigation_dashboard), getColor(R.color.rainbow_orange))
+        colorMenuItem(menu.findItem(R.id.navigation_records), getColor(R.color.rainbow_blue))
+        colorMenuItem(menu.findItem(R.id.navigation_add), getColor(R.color.rainbow_green_light))
+        colorMenuItem(menu.findItem(R.id.navigation_settings), getColor(R.color.rainbow_purple_light))
+    }
+
+    private fun colorMenuItem(item: MenuItem?, color: Int) {
+        item?.let {
+            MenuItemCompat.setIconTintList(it, ColorStateList.valueOf(color))
+            val s = SpannableString(it.title)
+            s.setSpan(ForegroundColorSpan(color), 0, s.length, 0)
+            it.title = s
+        }
+    }
+    
+    /**
+     * Sets the toolbar title text color to white.
+     */
+    protected fun setToolbarTitleTextColorWhite() {
+        try {
+            val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+            toolbar?.setTitleTextColor(getColor(R.color.white))
+        } catch (e: Exception) {
+            // Log error if needed
+        }
     }
 }

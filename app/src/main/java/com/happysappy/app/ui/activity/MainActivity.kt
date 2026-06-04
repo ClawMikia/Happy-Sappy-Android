@@ -39,7 +39,9 @@ class MainActivity : BaseActivity() {
 
         // Setup toolbar
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
+        supportActionBar?.title = "Happy Sappy"
+        setToolbarTitleTextColorWhite()
 
         // Setup RecyclerView
         setupRecyclerView()
@@ -149,6 +151,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setupBottomNavigation() {
+        setupRainbowNavigation(binding.bottomNavigation)
         binding.bottomNavigation.apply {
             setOnItemSelectedListener { item ->
                 when (item.itemId) {

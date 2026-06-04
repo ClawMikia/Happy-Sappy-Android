@@ -5,97 +5,99 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
-    
-    <!-- Primary Rainbow Colors -->
-    <color name="rainbow_red">#FF4444</color>
-    <color name="rainbow_orange">#FF6B35</color>
-    <color name="rainbow_yellow">#FF9D00</color>
-    <color name="rainbow_green">#4CAF50</color>
-    <color name="rainbow_blue">#2196F3</color>
-    <color name="rainbow_purple">#9C27B0</color>
-    
-    <!-- Rainbow Gradient Colors (for smooth transitions) -->
-    <color name="rainbow_red_light">#FF6B6B</color>
-    <color name="rainbow_orange_light">#FF8C5A</color>
-    <color name="rainbow_yellow_light">#FFB833</color>
-    <color name="rainbow_green_light">#6BC97A</color>
-    <color name="rainbow_blue_light">#4DB6F5</color>
-    <color name="rainbow_purple_light">#B84CC5</color>
-    
-    <!-- Background Colors -->
-    <color name="background_light">#FFFFFF</color>
-    <color name="background_dark">#121212</color>
-    <color name="background_card_light">#FAFAFA</color>
-    <color name="background_card_dark">#1E1E1E</color>
-    <color name="background_surface_light">#F5F5F5</color>
-    <color name="background_surface_dark">#2D2D2D</color>
-    
-    <!-- Text Colors -->
-    <color name="text_primary_light">#212121</color>
-    <color name="text_primary_dark">#FFFFFF</color>
-    <color name="text_secondary_light">#757575</color>
-    <color name="text_secondary_dark">#B0B0B0</color>
-    <color name="text_hint_light">#9E9E9E</color>
-    <color name="text_hint_dark">#808080</color>
-    
-    <!-- Accent Colors -->
-    <color name="accent_primary">#FF9D00</color>
-    <color name="accent_secondary">#FF6B35</color>
-    <color name="accent_tertiary">#4CAF50</color>
-    
-    <!-- Button Colors -->
-    <color name="button_primary_start">#FF6B35</color>
-    <color name="button_primary_end">#FF9D00</color>
-    <color name="button_secondary_start">#4CAF50</color>
-    <color name="button_secondary_end">#2196F3</color>
+
+    <!-- Cyberpunk Neon Rainbow Colors (Based on original hues) -->
+    <color name="rainbow_red">#FF0055</color>
+    <color name="rainbow_orange">#FF8800</color>
+    <color name="rainbow_yellow">#FFEE00</color>
+    <color name="rainbow_green">#00FF66</color>
+    <color name="rainbow_blue">#00CCFF</color>
+    <color name="rainbow_purple">#AA00FF</color>
+    <color name="rainbow_pink">#FF69B4</color>
+    <color name="rainbow_teal">#00CED1</color>
+
+    <!-- Cyberpunk Glow Variants -->
+    <color name="rainbow_red_light">#FF3377</color>
+    <color name="rainbow_orange_light">#FFAA33</color>
+    <color name="rainbow_yellow_light">#FFFF33</color>
+    <color name="rainbow_green_light">#33FF88</color>
+    <color name="rainbow_blue_light">#33DDFF</color>
+    <color name="rainbow_purple_light">#BB33FF</color>
+
+    <!-- Cyberpunk Dark Backgrounds -->
+    <color name="background_light">#0B0E14</color>
+    <color name="background_dark">#0B0E14</color>
+    <color name="background_card_light">#161B22</color>
+    <color name="background_card_dark">#161B22</color>
+    <color name="background_surface_light">#1C2128</color>
+    <color name="background_surface_dark">#1C2128</color>
+
+    <!-- Cyberpunk Text Colors (Optimized for Dark Theme) -->
+    <color name="text_primary_light">#E6EDF3</color>
+    <color name="text_primary_dark">#E6EDF3</color>
+    <color name="text_secondary_light">#7D8590</color>
+    <color name="text_secondary_dark">#7D8590</color>
+    <color name="text_hint_light">#484F58</color>
+    <color name="text_hint_dark">#484F58</color>
+
+    <!-- Accent Colors (Cyberpunk) -->
+    <color name="accent_primary">#00CCFF</color>
+    <color name="accent_secondary">#FF0055</color>
+    <color name="accent_tertiary">#00FF66</color>
+
+    <!-- Button Colors (Cyberpunk) -->
+    <color name="button_primary_start">#00CCFF</color>
+    <color name="button_primary_end">#AA00FF</color>
+    <color name="button_secondary_start">#161B22</color>
+    <color name="button_secondary_end">#1C2128</color>
     <color name="button_text_light">#FFFFFF</color>
-    <color name="button_text_dark">#212121</color>
-    
-    <!-- Status Colors -->
-    <color name="success">#4CAF50</color>
-    <color name="warning">#FF9D00</color>
-    <color name="error">#FF4444</color>
-    <color name="info">#2196F3</color>
-    
-    <!-- Category Colors (Rainbow mapping) -->
-    <color name="category_food">#FF4444</color>         <!-- Red -->
-    <color name="category_transport">#FF6B35</color>     <!-- Orange -->
-    <color name="category_shopping">#FF9D00</color>      <!-- Yellow -->
-    <color name="category_entertainment">#4CAF50</color> <!-- Green -->
-    <color name="category_bills">#2196F3</color>         <!-- Blue -->
-    <color name="category_health">#9C27B0</color>        <!-- Purple -->
-    <color name="category_education">#FF6B6B</color>     <!-- Light Red -->
-    <color name="category_other">#757575</color>         <!-- Gray -->
-    
-    <!-- Progress Bar Rainbow Gradient -->
-    <color name="progress_red">#FF4444</color>
-    <color name="progress_orange">#FF6B35</color>
-    <color name="progress_yellow">#FF9D00</color>
-    <color name="progress_green">#4CAF50</color>
-    <color name="progress_blue">#2196F3</color>
-    <color name="progress_purple">#9C27B0</color>
-    
+    <color name="button_text_dark">#FFFFFF</color>
+
+    <!-- Status Colors (Cyberpunk) -->
+    <color name="success">#00FF66</color>
+    <color name="warning">#FFEE00</color>
+    <color name="error">#FF0055</color>
+    <color name="info">#00CCFF</color>
+
+    <!-- Category Colors (Mapped to Neon Rainbow) -->
+    <color name="category_food">#FF0055</color>
+    <color name="category_transport">#FF8800</color>
+    <color name="category_shopping">#FFEE00</color>
+    <color name="category_entertainment">#00FF66</color>
+    <color name="category_bills">#00CCFF</color>
+    <color name="category_health">#AA00FF</color>
+    <color name="category_education">#FF3377</color>
+    <color name="category_other">#7D8590</color>
+
+    <!-- Progress Bar Cyberpunk Gradient -->
+    <color name="progress_red">#FF0055</color>
+    <color name="progress_orange">#FF8800</color>
+    <color name="progress_yellow">#FFEE00</color>
+    <color name="progress_green">#00FF66</color>
+    <color name="progress_blue">#00CCFF</color>
+    <color name="progress_purple">#AA00FF</color>
+
     <!-- Divider Colors -->
-    <color name="divider_light">#E0E0E0</color>
-    <color name="divider_dark">#424242</color>
-    
+    <color name="divider_light">#30363D</color>
+    <color name="divider_dark">#30363D</color>
+
     <!-- Navigation Colors -->
-    <color name="navigation_background_light">#FFFFFF</color>
-    <color name="navigation_background_dark">#1E1E1E</color>
-    <color name="navigation_selected_light">#FF9D00</color>
-    <color name="navigation_selected_dark">#FFB833</color>
-    <color name="navigation_unselected_light">#9E9E9E</color>
-    <color name="navigation_unselected_dark">#757575</color>
-    
-    <!-- Card Shadow -->
-    <color name="card_shadow_light">#1A000000</color>
+    <color name="navigation_background_light">#0B0E14</color>
+    <color name="navigation_background_dark">#0B0E14</color>
+    <color name="navigation_selected_light">#00CCFF</color>
+    <color name="navigation_selected_dark">#00CCFF</color>
+    <color name="navigation_unselected_light">#484F58</color>
+    <color name="navigation_unselected_dark">#484F58</color>
+
+    <!-- Card Shadow/Glow -->
+    <color name="card_shadow_light">#40000000</color>
     <color name="card_shadow_dark">#40000000</color>
     
     <!-- Overlay Colors -->
-    <color name="overlay_light">#80FFFFFF</color>
+    <color name="overlay_light">#80000000</color>
     <color name="overlay_dark">#80000000</color>
     
     <!-- Ripple Effect -->
-    <color name="ripple_light">#1A000000</color>
-    <color name="ripple_dark">#33FFFFFF</color>
+    <color name="ripple_light">#3300CCFF</color>
+    <color name="ripple_dark">#3300CCFF</color>
 </resources>

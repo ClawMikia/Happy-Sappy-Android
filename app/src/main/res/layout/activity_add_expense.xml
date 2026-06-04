@@ -316,12 +316,26 @@
                     android:text="@string/add_expense_button"
                     android:textSize="16sp"
                     app:cornerRadius="12dp"
-                    app:backgroundTint="@drawable/button_gradient" />
+                    app:backgroundTint="#AA00FF" />
 
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/navigation_background_light"
+        android:elevation="8dp"
+        android:fitsSystemWindows="true"
+        app:itemIconTint="@null"
+        app:itemTextColor="@null"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="labeled" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

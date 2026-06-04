@@ -78,62 +78,6 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Theme Settings Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardBackgroundColor="@color/background_card_light"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/settings_theme"
-                            android:textColor="@color/text_primary_light"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <RadioGroup
-                            android:id="@+id/radioGroupTheme"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp">
-
-                            <RadioButton
-                                android:id="@+id/radioLight"
-                                android:layout_width="match_parent"
-                                android:layout_height="48dp"
-                                android:text="@string/settings_theme_light"
-                                android:textColor="@color/text_primary_light" />
-
-                            <RadioButton
-                                android:id="@+id/radioDark"
-                                android:layout_width="match_parent"
-                                android:layout_height="48dp"
-                                android:text="@string/settings_theme_dark"
-                                android:textColor="@color/text_primary_light" />
-
-                            <RadioButton
-                                android:id="@+id/radioSystem"
-                                android:layout_width="match_parent"
-                                android:layout_height="48dp"
-                                android:text="@string/settings_theme_system"
-                                android:textColor="@color/text_primary_light" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
                 <!-- Notifications Settings Card -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
@@ -309,6 +253,9 @@
         android:background="@color/navigation_background_light"
         android:elevation="8dp"
         android:fitsSystemWindows="true"
-        app:menu="@menu/bottom_navigation_menu" />
+        app:itemIconTint="@null"
+        app:itemTextColor="@null"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="labeled" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

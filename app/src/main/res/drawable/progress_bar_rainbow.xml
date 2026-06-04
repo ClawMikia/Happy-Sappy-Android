@@ -5,20 +5,20 @@
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
             <corners android:radius="4dp" />
-            <solid android:color="@color/background_surface_light" />
+            <solid android:color="@color/background_surface_dark" />
         </shape>
     </item>
     
-    <!-- Progress with Rainbow Gradient -->
+    <!-- Progress with Neon Gradient -->
     <item android:id="@android:id/progress">
         <clip>
             <shape android:shape="rectangle">
                 <corners android:radius="4dp" />
                 <gradient
                     android:angle="0"
-                    android:startColor="@color/rainbow_red"
-                    android:centerColor="@color/rainbow_yellow"
-                    android:endColor="@color/rainbow_purple"
+                    android:startColor="@color/rainbow_blue"
+                    android:centerColor="@color/rainbow_purple"
+                    android:endColor="@color/rainbow_red"
                     android:type="linear" />
             </shape>
         </clip>
@@ -31,9 +31,9 @@
                 <corners android:radius="4dp" />
                 <gradient
                     android:angle="0"
-                    android:startColor="@color/rainbow_red_light"
-                    android:centerColor="@color/rainbow_yellow_light"
-                    android:endColor="@color/rainbow_purple_light"
+                    android:startColor="@color/rainbow_blue_light"
+                    android:centerColor="@color/rainbow_purple_light"
+                    android:endColor="@color/rainbow_red_light"
                     android:type="linear" />
             </shape>
         </clip>

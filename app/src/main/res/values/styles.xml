@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Chip Style -->
+    <style name="Chip.HappySappy" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipBackgroundColor">@color/rainbow_purple</item>
+        <item name="chipCornerRadius">16dp</item>
+        <item name="chipStartPadding">8dp</item>
+        <item name="chipEndPadding">8dp</item>
+        <item name="chipStrokeColor">@color/rainbow_purple</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Category Chip Styles -->
+    <style name="Chip.HappySappy.Food" parent="Chip.HappySappy">
+        <item name="chipBackgroundColor">@color/rainbow_orange</item>
+        <item name="chipStrokeColor">@color/rainbow_orange</item>
+    </style>
+
+    <style name="Chip.HappySappy.Transport" parent="Chip.HappySappy">
+        <item name="chipBackgroundColor">@color/rainbow_blue</item>
+        <item name="chipStrokeColor">@color/rainbow_blue</item>
+    </style>
+
+    <style name="Chip.HappySappy.Shopping" parent="Chip.HappySappy">
+        <item name="chipBackgroundColor">@color/rainbow_pink</item>
+        <item name="chipStrokeColor">@color/rainbow_pink</item>
+    </style>
+
+    <style name="Chip.HappySappy.Entertainment" parent="Chip.HappySappy">
+        <item name="chipBackgroundColor">@color/rainbow_red</item>
+        <item name="chipStrokeColor">@color/rainbow_red</item>
+    </style>
+
+    <style name="Chip.HappySappy.Bills" parent="Chip.HappySappy">
+        <item name="chipBackgroundColor">@color/rainbow_green</item>
+        <item name="chipStrokeColor">@color/rainbow_green</item>
+    </style>
+
+    <style name="Chip.HappySappy.Health" parent="Chip.HappySappy">
+        <item name="chipBackgroundColor">@color/rainbow_teal</item>
+        <item name="chipStrokeColor">@color/rainbow_teal</item>
+    </style>
+</resources>

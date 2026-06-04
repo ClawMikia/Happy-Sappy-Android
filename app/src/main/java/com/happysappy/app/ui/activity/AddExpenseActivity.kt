@@ -2,6 +2,7 @@
 package com.happysappy.app.ui.activity
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -46,6 +47,10 @@ class AddExpenseActivity : BaseActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+        setToolbarTitleTextColorWhite()
+
+        // Setup bottom navigation
+        setupBottomNavigation()
 
         // Setup UI components
         setupFrequencySpinner()
@@ -179,6 +184,31 @@ class AddExpenseActivity : BaseActivity() {
         // Clear form and return to dashboard
         clearForm()
         finish()
+    }
+
+    private fun setupBottomNavigation() {
+        setupRainbowNavigation(binding.bottomNavigation)
+        binding.bottomNavigation.apply {
+            selectedItemId = R.id.navigation_add
+            setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.navigation_dashboard -> {
+                        startActivity(Intent(this@AddExpenseActivity, MainActivity::class.java))
+                        true
+                    }
+                    R.id.navigation_records -> {
+                        startActivity(Intent(this@AddExpenseActivity, RecordsActivity::class.java))
+                        true
+                    }
+                    R.id.navigation_add -> true
+                    R.id.navigation_settings -> {
+                        startActivity(Intent(this@AddExpenseActivity, SettingsActivity::class.java))
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
     }
 
     private fun clearForm() {

@@ -6,28 +6,22 @@ import android.content.SharedPreferences
 
 /**
  * PreferenceManager - SharedPreferences wrapper for app settings.
- * 
+ *
  * This class provides a clean API for storing and retrieving app preferences
- * including theme settings, notification preferences, and other user settings.
+ * including notification preferences, and other user settings.
+ * Theme functionality has been removed.
  */
 class PreferenceManager(context: Context) {
-    
+
     private val prefs: SharedPreferences = context.getSharedPreferences(
         PREFS_NAME, Context.MODE_PRIVATE
     )
-    
+
     companion object {
         private const val PREFS_NAME = "happy_sappy_prefs"
-        
+
         // Preference keys
-        private const val KEY_THEME = "theme"
-
         private const val KEY_CURRENCY = "currency"
-
-        // Theme constants kept for build compatibility but functionality removed
-        const val THEME_LIGHT = ""
-        const val THEME_DARK = ""
-        const val THEME_SYSTEM = ""
         private const val KEY_NOTIFICATIONS_ENABLED = "notifications_enabled"
         private const val KEY_DAILY_REMINDER = "daily_reminder"
         private const val KEY_WEEKLY_SUMMARY = "weekly_summary"
@@ -38,118 +32,107 @@ class PreferenceManager(context: Context) {
         private const val KEY_TOTAL_XP = "total_xp"
         private const val KEY_LAST_EXPENSE_DATE = "last_expense_date"
         private const val KEY_DISCIPLINE_SCORE = "discipline_score"
-        
     }
-    
+
     // ==================== Currency Settings ====================
-    
+
     fun saveCurrency(currency: String) {
         prefs.edit().putString(KEY_CURRENCY, currency).apply()
     }
-    
+
     fun getCurrency(): String {
         return prefs.getString(KEY_CURRENCY, "USD") ?: "USD"
     }
-    
-    // ==================== Theme Settings ====================
-    
-    fun saveTheme(theme: String) {
-        prefs.edit().putString(KEY_THEME, theme).apply()
-    }
-    
-    fun getTheme(): String {
-        return prefs.getString(KEY_THEME, THEME_LIGHT) ?: THEME_LIGHT
-    }
-    
+
     // ==================== Notification Settings ====================
-    
+
     fun saveNotificationsEnabled(enabled: Boolean) {
         prefs.edit().putBoolean(KEY_NOTIFICATIONS_ENABLED, enabled).apply()
     }
-    
+
     fun areNotificationsEnabled(): Boolean {
         return prefs.getBoolean(KEY_NOTIFICATIONS_ENABLED, true)
     }
-    
+
     fun saveDailyReminderEnabled(enabled: Boolean) {
         prefs.edit().putBoolean(KEY_DAILY_REMINDER, enabled).apply()
     }
-    
+
     fun isDailyReminderEnabled(): Boolean {
         return prefs.getBoolean(KEY_DAILY_REMINDER, true)
     }
-    
+
     fun saveWeeklySummaryEnabled(enabled: Boolean) {
         prefs.edit().putBoolean(KEY_WEEKLY_SUMMARY, enabled).apply()
     }
-    
+
     fun isWeeklySummaryEnabled(): Boolean {
         return prefs.getBoolean(KEY_WEEKLY_SUMMARY, true)
     }
-    
+
     fun saveMonthlyReportEnabled(enabled: Boolean) {
         prefs.edit().putBoolean(KEY_MONTHLY_REPORT, enabled).apply()
     }
-    
+
     fun isMonthlyReportEnabled(): Boolean {
         return prefs.getBoolean(KEY_MONTHLY_REPORT, true)
     }
-    
+
     fun saveDailyReminderTime(hour: Int, minute: Int) {
         prefs.edit()
             .putInt(KEY_DAILY_REMINDER_TIME, hour * 100 + minute)
             .apply()
     }
-    
+
     fun getDailyReminderTime(): Pair<Int, Int> {
         val value = prefs.getInt(KEY_DAILY_REMINDER_TIME, 900) // Default 9:00 AM
         return Pair(value / 100, value % 100)
     }
-    
+
     fun saveWeeklySummaryDay(day: Int) {
         prefs.edit().putInt(KEY_WEEKLY_SUMMARY_DAY, day).apply()
     }
-    
+
     fun getWeeklySummaryDay(): Int {
         return prefs.getInt(KEY_WEEKLY_SUMMARY_DAY, 1) // Default Monday
     }
-    
+
     // ==================== Gamification Settings ====================
-    
+
     fun saveNoSpendStreak(days: Int) {
         prefs.edit().putInt(KEY_NO_SPEND_STREAK, days).apply()
     }
-    
+
     fun getNoSpendStreak(): Int {
         return prefs.getInt(KEY_NO_SPEND_STREAK, 0)
     }
-    
+
     fun saveTotalXP(xp: Int) {
         prefs.edit().putInt(KEY_TOTAL_XP, xp).apply()
     }
-    
+
     fun getTotalXP(): Int {
         return prefs.getInt(KEY_TOTAL_XP, 0)
     }
-    
+
     fun saveLastExpenseDate(date: Long) {
         prefs.edit().putLong(KEY_LAST_EXPENSE_DATE, date).apply()
     }
-    
+
     fun getLastExpenseDate(): Long {
         return prefs.getLong(KEY_LAST_EXPENSE_DATE, 0L)
     }
-    
+
     fun saveDisciplineScore(score: Int) {
         prefs.edit().putInt(KEY_DISCIPLINE_SCORE, score).apply()
     }
-    
+
     fun getDisciplineScore(): Int {
         return prefs.getInt(KEY_DISCIPLINE_SCORE, 100)
     }
-    
+
     // ==================== Clear All Settings ====================
-    
+
     fun clearAll() {
         prefs.edit().clear().apply()
     }

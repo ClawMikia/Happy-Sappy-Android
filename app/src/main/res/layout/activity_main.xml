@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light"
+    android:background="@color/background_dark"
     android:fitsSystemWindows="true"
     tools:context=".ui.activity.MainActivity">
 
@@ -19,14 +19,15 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_gradient_rainbow"
-            android:elevation="4dp">
+            android:background="@color/background_dark"
+            android:elevation="0dp">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
+                android:background="@drawable/bg_gradient_rainbow"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:title="Happy Sappy"
                 app:titleTextColor="@color/white" />
 
@@ -45,14 +46,16 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- Welcome Card with Rainbow Gradient -->
+                <!-- Welcome Card with Neon Accent -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    app:cardBackgroundColor="@color/rainbow_yellow"
+                    app:cardBackgroundColor="@color/background_card_dark"
                     app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
+                    app:cardElevation="8dp"
+                    app:strokeColor="@color/rainbow_yellow"
+                    app:strokeWidth="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -64,7 +67,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dashboard_title"
-                            android:textColor="@color/white"
+                            android:textColor="@color/rainbow_yellow"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -72,8 +75,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Track your spending habits"
-                            android:textColor="@color/white"
+                            android:text="SYSTEM_STATUS: ACTIVE"
+                            android:textColor="@color/text_secondary_dark"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -94,9 +97,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/background_card_light"
+                        app:cardBackgroundColor="@color/background_card_dark"
                         app:cardCornerRadius="16dp"
-                        app:cardElevation="4dp">
+                        app:cardElevation="4dp"
+                        app:strokeColor="@color/rainbow_red"
+                        app:strokeWidth="1dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -108,8 +113,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/dashboard_total_spent"
-                                android:textColor="@color/text_secondary_light"
-                                android:textSize="12sp" />
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="10sp" />
 
                             <TextView
                                 android:id="@+id/tvTotalSpent"
@@ -118,7 +123,7 @@
                                 android:layout_marginTop="8dp"
                                 android:text="$0.00"
                                 android:textColor="@color/rainbow_red"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -131,9 +136,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/background_card_light"
+                        app:cardBackgroundColor="@color/background_card_dark"
                         app:cardCornerRadius="16dp"
-                        app:cardElevation="4dp">
+                        app:cardElevation="4dp"
+                        app:strokeColor="@color/rainbow_orange"
+                        app:strokeWidth="1dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -145,8 +152,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/dashboard_expense_count"
-                                android:textColor="@color/text_secondary_light"
-                                android:textSize="12sp" />
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="10sp" />
 
                             <TextView
                                 android:id="@+id/tvExpenseCount"
@@ -155,7 +162,7 @@
                                 android:layout_marginTop="8dp"
                                 android:text="0"
                                 android:textColor="@color/rainbow_orange"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -167,9 +174,11 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/background_card_light"
+                        app:cardBackgroundColor="@color/background_card_dark"
                         app:cardCornerRadius="16dp"
-                        app:cardElevation="4dp">
+                        app:cardElevation="4dp"
+                        app:strokeColor="@color/rainbow_green"
+                        app:strokeWidth="1dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -181,8 +190,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/dashboard_average"
-                                android:textColor="@color/text_secondary_light"
-                                android:textSize="12sp" />
+                                android:textColor="@color/text_secondary_dark"
+                                android:textSize="10sp" />
 
                             <TextView
                                 android:id="@+id/tvAverage"
@@ -191,7 +200,7 @@
                                 android:layout_marginTop="8dp"
                                 android:text="$0.00"
                                 android:textColor="@color/rainbow_green"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -205,9 +214,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    app:cardBackgroundColor="@color/background_card_light"
+                    app:cardBackgroundColor="@color/background_card_dark"
                     app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/rainbow_purple"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -219,7 +230,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/gamification_title"
-                            android:textColor="@color/text_primary_light"
+                            android:textColor="@color/text_primary_dark"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -235,7 +246,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/gamification_streak"
-                                android:textColor="@color/text_secondary_light"
+                                android:textColor="@color/text_secondary_dark"
                                 android:textSize="14sp" />
 
                             <TextView
@@ -308,7 +319,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/dashboard_recent_expenses"
-                            android:textColor="@color/text_primary_light"
+                            android:textColor="@color/text_primary_dark"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -317,7 +328,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dashboard_view_all"
-                            android:textColor="@color/rainbow_yellow"
+                            android:textColor="@color/rainbow_blue"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
@@ -382,9 +393,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/navigation_background_light"
+        android:background="@color/background_dark"
         android:elevation="8dp"
         android:fitsSystemWindows="true"
-        app:menu="@menu/bottom_navigation_menu" />
+        app:itemIconTint="@null"
+        app:itemTextColor="@null"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="labeled" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

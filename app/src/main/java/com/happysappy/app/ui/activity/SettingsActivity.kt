@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.happysappy.app.R
 import com.happysappy.app.databinding.ActivitySettingsBinding
@@ -109,12 +109,12 @@ class SettingsActivity : BaseActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+        setToolbarTitleTextColorWhite()
 
         // Load current settings
         loadSettings()
 
         // Setup click listeners
-        setupThemeSelection()
         setupNotificationToggles()
         setupDataManagement()
         setupAboutSection()
@@ -127,13 +127,6 @@ class SettingsActivity : BaseActivity() {
         // Load currency setting
         setupCurrencySpinner()
         
-        // Load theme setting
-        val currentTheme = preferenceManager.getTheme()
-        when (currentTheme) {
-            PreferenceManager.THEME_LIGHT -> binding.radioLight.isChecked = true
-            PreferenceManager.THEME_DARK -> binding.radioDark.isChecked = true
-            PreferenceManager.THEME_SYSTEM -> binding.radioSystem.isChecked = true
-        }
 
         // Load notification settings
         binding.switchNotifications.isChecked = preferenceManager.areNotificationsEnabled()
@@ -175,27 +168,15 @@ class SettingsActivity : BaseActivity() {
         }
     }
 
-    private fun setupThemeSelection() {
-        binding.radioGroupTheme.setOnCheckedChangeListener { _, checkedId ->
-            val theme = when (checkedId) {
-                R.id.radioLight -> PreferenceManager.THEME_LIGHT
-                R.id.radioDark -> PreferenceManager.THEME_DARK
-                R.id.radioSystem -> PreferenceManager.THEME_SYSTEM
-                else -> PreferenceManager.THEME_LIGHT
-            }
-            preferenceManager.saveTheme(theme)
-            applyTheme(theme)
-        }
-    }
 
     private fun applyTheme(theme: String) {
         val mode = when (theme) {
-            PreferenceManager.THEME_LIGHT -> AppCompatDelegate.MODE_NIGHT_NO
-            PreferenceManager.THEME_DARK -> AppCompatDelegate.MODE_NIGHT_YES
-            PreferenceManager.THEME_SYSTEM -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-            else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+            PreferenceManager.THEME_LIGHT -> ""
+            PreferenceManager.THEME_DARK -> ""
+            PreferenceManager.THEME_SYSTEM -> ""
+            else -> ""
         }
-        AppCompatDelegate.setDefaultNightMode(mode)
+        // Theme functionality removed
         
         // Navigate back to MainActivity to apply theme across the app
         val intent = Intent(this, MainActivity::class.java)
@@ -272,6 +253,7 @@ class SettingsActivity : BaseActivity() {
     }
 
     private fun setupBottomNavigation() {
+        setupRainbowNavigation(binding.bottomNavigation)
         binding.bottomNavigation.apply {
             selectedItemId = R.id.navigation_settings
             setOnItemSelectedListener { item ->

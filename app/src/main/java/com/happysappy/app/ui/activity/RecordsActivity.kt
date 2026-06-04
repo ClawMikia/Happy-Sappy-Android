@@ -42,6 +42,7 @@ class RecordsActivity : BaseActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+        setToolbarTitleTextColorWhite()
 
         // Setup RecyclerView
         setupRecyclerView()
@@ -165,6 +166,7 @@ class RecordsActivity : BaseActivity() {
     }
 
     private fun setupBottomNavigation() {
+        setupRainbowNavigation(binding.bottomNavigation)
         binding.bottomNavigation.apply {
             selectedItemId = R.id.navigation_records
             setOnItemSelectedListener { item ->

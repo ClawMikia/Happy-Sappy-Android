@@ -51,10 +51,12 @@
     <string name="settings_title">Settings</string>
     <string name="settings_currency">Currency</string>
     <string name="settings_currency_select">Select Currency</string>
-    <string name="settings_theme">Theme</string>
-    <string name="settings_theme_light">Light Mode</string>
-    <string name="settings_theme_dark">Dark Mode</string>
-    <string name="settings_theme_system">Follow System</string>
+
+    <!-- Theme strings kept for build compatibility but functionality removed -->
+    <string name="settings_theme"></string>
+    <string name="settings_theme_light"></string>
+    <string name="settings_theme_dark"></string>
+    <string name="settings_theme_system"></string>
     <string name="settings_notifications">Notifications</string>
     <string name="settings_notifications_enable">Enable Notifications</string>
     <string name="settings_notifications_daily">Daily Reminder</string>
